@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>531</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WikiClassify Parsing Module</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="wiki_image">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>-10</y>
+      <width>231</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>511</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Parse (txt)</string>
+     </attribute>
+     <widget class="QSpinBox" name="articles_per_file">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>280</y>
+        <width>70</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>250</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>284</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Desired Articles per File</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="parse_txt_start_button">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>380</y>
+        <width>151</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Parsing</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="create_file_system">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="text">
+       <string>Create new filesystem?</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="parse_formatting">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>22</y>
+        <width>156</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parse out formatting?</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="directory_input">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>240</y>
+        <width>110</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>320</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Data Dump XML File</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="datadump_input">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>317</y>
+        <width>110</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>194</x>
+        <y>236</y>
+        <width>161</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Base Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>193</x>
+        <y>314</y>
+        <width>160</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Data Dump File</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="warning_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>353</y>
+        <width>471</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>183</y>
+        <width>471</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="tot_art_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>2000000</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>82</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Articles to Compile</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="hashfile_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Create Hashfile?</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="headers_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Include Article Headers?</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="equal_counts">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>26</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ensure equal class counts</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>30</y>
+        <width>16</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="good_check">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>63</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save 'Good' Articles</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="bad_check">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>90</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save 'Bad' Articles</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="redirect_check">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>117</y>
+        <width>171</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save 'Redirect' Articles</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="regular_check">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>144</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save 'Regular' Articles</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="multiple_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Folder for Each Classification</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="titles_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>171</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Specified Titles Only</string>
+      </property>
+     </widget>
+     <zorder>parse_txt_start_button</zorder>
+     <zorder>create_file_system</zorder>
+     <zorder>parse_formatting</zorder>
+     <zorder>label</zorder>
+     <zorder>articles_per_file</zorder>
+     <zorder>directory_input</zorder>
+     <zorder>label_2</zorder>
+     <zorder>datadump_input</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>pushButton_3</zorder>
+     <zorder>warning_label</zorder>
+     <zorder>line</zorder>
+     <zorder>tot_art_box</zorder>
+     <zorder>label_3</zorder>
+     <zorder>hashfile_checkbox</zorder>
+     <zorder>headers_checkbox</zorder>
+     <zorder>equal_counts</zorder>
+     <zorder>line_2</zorder>
+     <zorder>good_check</zorder>
+     <zorder>bad_check</zorder>
+     <zorder>redirect_check</zorder>
+     <zorder>regular_check</zorder>
+     <zorder>multiple_checkbox</zorder>
+     <zorder>titles_checkbox</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Parse (HTML)</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>create_file_system</sender>
+   <signal>clicked()</signal>
+   <receiver>directory_input</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

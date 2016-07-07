@@ -1,0 +1,15 @@
+#include "wikipage.h"
+#include "mainwindow.h"
+#include <QApplication>
+#include <QtCore>
+
+class execthread : public QThread{
+public:
+    execthread();
+    void run();
+    
+};
+
+void execthread::run(){
+    
+}
