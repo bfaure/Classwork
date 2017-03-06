@@ -15,11 +15,14 @@ NetID: bdf39
 
 bool checker(int x, int y, int i, std::vector<std::vector<int>> values){
   int size = values.size(); //creating function to check if the number matching sudoku rules
-  for(int j=0; j<size; j++){
-    if(i == values[x][j]){ //checking the column for identical number
+  for(int j=0; j<size; j++)
+  {
+    if(i == values[x][j])
+    { //checking the column for identical number
       return false;
     }
-    if(i ==values[j][y]){//checking the row for identical number
+    if(i ==values[j][y])
+    {//checking the row for identical number
       return false;
     }
   }
@@ -32,50 +35,64 @@ bool checker(int x, int y, int i, std::vector<std::vector<int>> values){
   int ybox = (y-y_off)/num;
   int xstart = x-x_off;//where to start the box to check inside (x coor)
   int ystart = y-y_off;// " " (y coor)
-  for(int v = 0; v<num; v++){ //loops through all values in the box
+  for(int v = 0; v<num; v++)
+  { //loops through all values in the box
     int xx = xstart+v;
-    for(int z = 0; z<num; z++){
+    for(int z = 0; z<num; z++)
+    {
       int yy = ystart+z;
-      if(i == values[xx][yy]){//if the desired value is already in the box..
-	return false;//...the function returns false and triggers a checking of the...
-      }//...next number unless it was the last one in the done-for loop
+      if(i == values[xx][yy])
+      { //if the desired value is already in the box..
+        return false;//...the function returns false and triggers a checking of the...
+      } //...next number unless it was the last one in the done-for loop
     }
   }
   return true; //returns true if the input is valid and follows sudoku rules
 }
-bool find(int &a, int &b,std::vector<std::vector<int>> puzzle){ //because it calls by reference..
+bool find(int &a, int &b,std::vector<std::vector<int>> puzzle)
+{ //because it calls by reference..
   bool condition = false;//...the find function can return x and y coordinates as well as bool
   int size = puzzle.size(); //loading in the size of the current sudoku
-  for(int j=0; j<size; j++){
-    for(int k=0; k<size; k++){
-      if(puzzle[k][j]==0){//searches entire puzzle for first zero 
-	  a=k;
-	  b=j;//loads in the values of the found zero coordinate
-	  return true; //returns true
-	}
+  for(int j=0; j<size; j++)
+  {
+    for(int k=0; k<size; k++)
+    {
+      if(puzzle[k][j]==0)
+      { //searches entire puzzle for first zero 
+        a=k;
+        b=j;//loads in the values of the found zero coordinate
+        return true; //returns true
       }
     }
+  }
   return false;//if there are no zeros left in the 2d vector, returns false
 }
-bool done(std::vector<std::vector<int>> &values){ //function to start backtracking
+bool done(std::vector<std::vector<int>> &values)
+{ //function to start backtracking
   int x; //x coordinate
   int y; //y coordinate (both coordinates will be loaded into in find function)
   int size = values.size();
-  if(find(x,y,values)==false){//calls the find function to see if the 2d vector is fully loaded
+  if(find(x,y,values)==false)
+  {//calls the find function to see if the 2d vector is fully loaded
     return true; //if the 2d value vector has no zeroes left, sudoku is solved
   }
-  for(int p=1; p<=size; p++){
-    if(checker(x,y,p,values)){ //calls the checker function to see if the input follows... 
+  for(int p=1; p<=size; p++)
+  {
+    if(checker(x,y,p,values))
+    { //calls the checker function to see if the input follows... 
       values[x][y]=p; //...the rules of sudoku
-      if(done(values)==true){ //recursively calls done function to keep solving
-	return true; //if it can solve the entire puzzle with that input, returns true
+
+      if(done(values)==true)
+      { //recursively calls done function to keep solving
+	       return true; //if it can solve the entire puzzle with that input, returns true
       }
       values[x][y]=0; //if the checker could not find a solution with any of the inputs...
     }//...it uses a placeholder to let the find function know its not done yet
   }
   return false; //returns false basically if sudoku is not possible to solve
 }      
-int main(int argc,char ** argv){
+int main(int argc,char ** argv)
+{
   if(argc<2)
   { //if less than two inputs, return 1
     return 1;
