@@ -13,6 +13,8 @@ NetID: bdf39
 #include <string>
 #include <stack>
 
+// checks if the new value 'i', placed at (x,y), will satisfy
+// the rules of sudoku, if so, return true, false o.w.
 bool checker(int x, int y, int i, std::vector<std::vector<int>> values){
   int size = values.size(); //creating function to check if the number matching sudoku rules
   for(int j=0; j<size; j++)
@@ -26,8 +28,8 @@ bool checker(int x, int y, int i, std::vector<std::vector<int>> values){
       return false;
     }
   }
+
   //next test is to check the box the value lies inside
-  //std::cout<<"passed first test\n";
   int num = sqrt(size); //solving for the dimensions of the sudoku
   int x_off = x%num;//x coordinate offset inside box
   int y_off = y%num;//y coordinate offset inside box
@@ -49,6 +51,7 @@ bool checker(int x, int y, int i, std::vector<std::vector<int>> values){
   }
   return true; //returns true if the input is valid and follows sudoku rules
 }
+
 bool find(int &a, int &b,std::vector<std::vector<int>> puzzle)
 { //because it calls by reference..
   bool condition = false;//...the find function can return x and y coordinates as well as bool
@@ -67,6 +70,7 @@ bool find(int &a, int &b,std::vector<std::vector<int>> puzzle)
   }
   return false;//if there are no zeros left in the 2d vector, returns false
 }
+
 bool done(std::vector<std::vector<int>> &values)
 { //function to start backtracking
   int x; //x coordinate
@@ -91,6 +95,7 @@ bool done(std::vector<std::vector<int>> &values)
   }
   return false; //returns false basically if sudoku is not possible to solve
 }      
+
 int main(int argc,char ** argv)
 {
   if(argc<2)
