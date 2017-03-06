@@ -76,20 +76,14 @@ bool done(std::vector<std::vector<int>> &values)
   int x; //x coordinate
   int y; //y coordinate (both coordinates will be loaded into in find function)
   int size = values.size();
-  if(find(x,y,values)==false)
-  {//calls the find function to see if the 2d vector is fully loaded
-    return true; //if the 2d value vector has no zeroes left, sudoku is solved
-  }
+  if(find(x,y,values)==false){  return true;  }
   for(int p=1; p<=size; p++)
   {
     if(checker(x,y,p,values))
     { //calls the checker function to see if the input follows... 
       values[x][y]=p; //...the rules of sudoku
 
-      if(done(values)==true)
-      { //recursively calls done function to keep solving
-	       return true; //if it can solve the entire puzzle with that input, returns true
-      }
+      if(done(values)==true){  return true;  }
       values[x][y]=0; //if the checker could not find a solution with any of the inputs...
     }//...it uses a placeholder to let the find function know its not done yet
   }
@@ -98,25 +92,19 @@ bool done(std::vector<std::vector<int>> &values)
 
 int main(int argc,char ** argv)
 {
-  if(argc<2)
-  { //if less than two inputs, return 1
-    return 1;
-  }
+  if(argc<2){  return 1;  } // if wrong number of inputs
+
   int size = std::stoi(argv[1]); //converting size input to integer
   float root = sqrt(size); //attempting to take root of size input
-  if(fmod(root,1) != 0)
-  { //remainder will be zero if natural number
-    return 2; //returns 2 if size is not a square
-  }
+
+  if(fmod(root,1) != 0){  return 2;  } // if input size not a square
+
   int num_inits = 0;//initializing the num_inits variable at zero
   if(argc > 2)
   { //checking for any initial conditions
     int count = argc-2; //subtracting the size input and terminal call input
     int check = count%3; //should be sets of three's
-    if(check != 0)
-    { 
-      return 1; //cancel if initial condition size is invalid
-    }
+    if(check != 0){  return 1;  } // if inputs are illegal
     num_inits = count/3; //setting num_inits to findings to be used later
   }
 
@@ -135,31 +123,13 @@ int main(int argc,char ** argv)
   if(done(values)==true) //starting the done function to solve the puzzle
   { 
     std::string row_separator = "";
-    for (int i=0; i<3.6*size; i++)
-    {
-      row_separator = row_separator+"=";
-    }
+    for (int i=0; i<3.6*size; i++){  row_separator = row_separator+"=";  }
     row_separator = row_separator + "\n";
-
-    std::string row_separator2 = "";
-    for (int i=0; i<3.6*size; i++)
-    {
-      row_separator2 = row_separator2+"=";
-    }
-    row_separator2 = row_separator2 + "\n";
-
 
     for(int j=0; j<size; j++)
     { //input is the 2d vector loaded with the initial values
-      //std::cout<<row_separator;
-      if ( (int)(j) % (int)(std::sqrt(size)) == 0 )
-      {
-        std::cout<<row_separator2;
-      }
-      
-
+      if ( (int)(j) % (int)(std::sqrt(size)) == 0 ){  std::cout<<row_separator;  }
       std::cout<<"‖ ";
-      std::cout<<" ";
 
       for(int k=0; k<size; k++)
       { //(if there are any)
@@ -167,20 +137,10 @@ int main(int argc,char ** argv)
         if ( cur.size()<3 )
         {
           int cur_size = cur.size();
-          for (int i=0; i<(3-cur_size); i++ )
-          {
-            cur = cur+" ";
-          }
+          for (int i=0; i<(3-cur_size); i++ ){  cur = cur+" ";  }
         }
-        //cur = cur+" ";
-        if ( (int)(k+1) % (int)(std::sqrt(size)) == 0 )
-        {
-          cur = cur+"‖ ";
-        }
-        else
-        {
-          cur = cur+"";
-        }
+        if ( (int)(k+1) % (int)(std::sqrt(size)) == 0 ){  cur = cur+"‖ ";  }
+        else {  cur = cur+"";  }
 	       std::cout<<cur;
       }
       std::cout<<std::endl; //once the done function has finished output the result ^^
