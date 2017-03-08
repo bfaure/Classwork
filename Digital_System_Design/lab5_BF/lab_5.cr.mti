@@ -1,0 +1,15 @@
+{C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} {C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}}

@@ -1,0 +1,181 @@
+
+// Brian Faure
+// lab6_BF.sv
+
+
+// first param should be CLOCK_50
+// second param should be SW[0]
+
+module lab6_BF(input logic 			CLOCK_50,
+               input logic 			SW_0,
+               output logic[6:0]	HEX0, HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7);
+  
+  logic [6:0] d_0 = 7'b1000000;
+  logic [6:0] d_1 = 7'b1111011;
+  logic [6:0] d_2 = 7'b0100100;
+  logic [6:0] d_3 = 7'b0110000;
+  logic [6:0] d_4 = 7'b0011001;
+  logic [6:0] d_5 = 7'b0010010;
+  logic [6:0] d_6 = 7'b0000010;
+  logic [6:0] d_7 = 7'b1111000;
+  logic [6:0] d_8 = 7'b0000000;
+  logic [6:0] d_9 = 7'b0011000;
+  logic [6:0] d_a = 7'b0001000;
+  logic [6:0] d_b = 7'b0000011;
+  logic [6:0] d_c = 7'b0100111;
+  logic [6:0] d_d = 7'b0100001;
+  logic [6:0] d_e = 7'b0000110;
+  logic [6:0] d_f = 7'b0001110;
+  
+  integer current_state 			= 0;
+  integer clock_modulus				= 1;
+  //integer clock_modulus 			= 50000000;
+  integer current_clock_increment	= 0;
+  integer should_rotate 			= 0;
+  integer user_pause 				= 0;
+      
+  
+  
+  // Triggered on every clock edge (50MHz)
+  always @(posedge CLOCK_50)
+    begin    
+      
+      // Increment 
+      current_clock_increment++;
+      should_rotate = 0;
+      
+      if ((current_clock_increment % clock_modulus) == 0)
+        begin
+          should_rotate = 1;
+        end
+      
+      process_clock();
+      
+    end
+  
+  // Triggered if user clicks the pause button
+  always @(posedge SW_0)
+    begin
+      if (user_pause == 0)
+        begin
+          user_pause = 1;
+        end
+      else
+        begin
+          user_pause = 0;
+        end
+    end
+  
+  function void process_clock;
+    begin
+      if (user_pause == 0)
+        begin
+          rotate();
+        end
+    end
+  endfunction
+  
+  function void set_outputs(logic [6:0] a, logic [6:0] b, logic [6:0] c,
+                            logic [6:0] d, logic [6:0] e, logic [6:0] f,
+                            logic [6:0] g, logic [6:0] h
+                           );
+    begin
+      HEX0 = a;
+      HEX1 = b;
+      HEX2 = c;
+      HEX3 = d;
+      HEX4 = e;
+      HEX5 = f;
+      HEX6 = g;
+      HEX7 = h;
+    end
+  endfunction
+  
+  function void rotate;
+    begin
+      case(current_state)
+        
+        0:
+          begin
+            set_outputs(d_0,d_1,d_2,d_3,d_4,d_5,d_6,d_7);
+          end
+        1:
+          begin
+            set_outputs(d_1,d_2,d_3,d_4,d_5,d_6,d_7,d_8);
+          end
+        2:
+          begin
+            set_outputs(d_2,d_3,d_4,d_5,d_6,d_7,d_8,d_9);
+          end
+        3:
+          begin
+            set_outputs(d_3,d_4,d_5,d_6,d_7,d_8,d_9,d_a);
+          end
+        4:
+          begin
+            set_outputs(d_4,d_5,d_6,d_7,d_8,d_9,d_a,d_b);
+          end
+        5:
+          begin
+            set_outputs(d_5,d_6,d_7,d_8,d_9,d_a,d_b,d_c);
+          end
+        6:
+          begin
+            set_outputs(d_6,d_7,d_8,d_9,d_a,d_b,d_c,d_d);
+          end
+        7:
+          begin
+            set_outputs(d_7,d_8,d_9,d_a,d_b,d_c,d_d,d_e);
+          end
+        8:
+          begin
+            set_outputs(d_8,d_9,d_a,d_b,d_c,d_d,d_e,d_f);
+          end
+        9:
+          begin
+            set_outputs(d_9,d_a,d_b,d_c,d_d,d_e,d_f,d_0);
+          end
+        10:
+          begin
+            set_outputs(d_a,d_b,d_c,d_d,d_e,d_f,d_0,d_1);
+          end
+        11:
+          begin
+            set_outputs(d_b,d_c,d_d,d_e,d_f,d_0,d_1,d_2);
+          end
+        12:
+          begin
+            set_outputs(d_c,d_d,d_e,d_f,d_0,d_1,d_2,d_3);
+          end
+        13:
+          begin
+            set_outputs(d_d,d_e,d_f,d_0,d_1,d_2,d_3,d_4);
+          end
+        14:
+          begin
+            set_outputs(d_e,d_f,d_0,d_1,d_2,d_3,d_4,d_5);
+          end
+        15:
+          begin
+            set_outputs(d_f,d_0,d_1,d_2,d_3,d_4,d_5,d_6);
+          end
+      endcase
+      
+      current_state += 1;
+      if (current_state == 16)
+        begin
+          current_state = 0;
+        end
+      
+    end
+  endfunction      
+endmodule: lab6_BF
+  
+  
+  
+  
+  
+
+  
+  
+  

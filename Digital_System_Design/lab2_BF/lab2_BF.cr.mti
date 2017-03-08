@@ -1,0 +1,8 @@
+C:/Users/bfaure/Files/School/Simulations/lab2_BF/lab2_BF.v {1 {vlog -work work -stats=none C:/Users/bfaure/Files/School/Simulations/lab2_BF/lab2_BF.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module lab2_BF
+
+Top level modules:
+	lab2_BF
+
+} {} {}}

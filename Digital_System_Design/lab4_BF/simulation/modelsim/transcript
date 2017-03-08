@@ -1,0 +1,38 @@
+# Compile of lab4_BF.sv was successful.
+# Compile of testbench_BF.sv was successful.
+# 2 compiles, 0 failed with no errors.
+add wave -position end  vsim:/lab4_BF/clk
+add wave -position end  vsim:/lab4_BF/reset
+add wave -position end  vsim:/lab4_BF/left
+add wave -position end  vsim:/lab4_BF/right
+add wave -position end  vsim:/lab4_BF/lc
+add wave -position end  vsim:/lab4_BF/lb
+add wave -position end  vsim:/lab4_BF/la
+add wave -position end  vsim:/lab4_BF/ra
+add wave -position end  vsim:/lab4_BF/rb
+add wave -position end  vsim:/lab4_BF/rc
+add wave -position end  vsim:/lab4_BF/state
+# Load canceled
+vsim work.lab4_BF
+# vsim work.lab4_BF 
+# Start time: 22:08:49 on Oct 20,2016
+# Loading sv_std.std
+# Loading work.lab4_BF
+run -all
+add wave  \
+sim:/lab4_BF/rb
+add wave  \
+sim:/lab4_BF/clk \
+sim:/lab4_BF/reset \
+sim:/lab4_BF/left \
+sim:/lab4_BF/right \
+sim:/lab4_BF/la \
+sim:/lab4_BF/lb \
+sim:/lab4_BF/lc \
+sim:/lab4_BF/ra \
+sim:/lab4_BF/rb \
+sim:/lab4_BF/rc \
+sim:/lab4_BF/state
+run -all
+# End time: 22:10:22 on Oct 20,2016, Elapsed time: 0:01:33
+# Errors: 0, Warnings: 0

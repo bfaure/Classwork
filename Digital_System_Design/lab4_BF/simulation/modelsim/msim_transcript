@@ -1,0 +1,97 @@
+# Reading C:/altera_lite/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# do lab4_BF_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying C:/altera_lite/16.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/bfaure/Files/School/Fall\ 2016/Digital\ System\ Design/Simulations/lab4_BF {C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:49:40 on Oct 20,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF" C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv 
+# -- Compiling module lab4_BF
+# 
+# Top level modules:
+# 	lab4_BF
+# End time: 21:49:40 on Oct 20,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.lab4_BF
+# vsim work.lab4_BF 
+# Start time: 21:49:54 on Oct 20,2016
+# Loading sv_std.std
+# Loading work.lab4_BF
+run 100
+force reset 1
+run 100
+force reset 0
+force left 1
+force right 0
+run 100
+run 100
+force left high
+# Invalid binary digit: h.
+# ** Error: (vsim-4011) Invalid force value: high.
+# 
+force clk 1
+run 100
+run 100
+force clk 0
+run 100
+force clk 1
+run 100
+restart -f
+add wave -position end  sim:/lab4_BF/clk
+add wave -position end  sim:/lab4_BF/reset
+add wave -position end  sim:/lab4_BF/left
+add wave -position end  sim:/lab4_BF/right
+add wave -position end  sim:/lab4_BF/lc
+add wave -position end  sim:/lab4_BF/lb
+add wave -position end  sim:/lab4_BF/la
+add wave -position end  sim:/lab4_BF/ra
+add wave -position end  sim:/lab4_BF/rb
+add wave -position end  sim:/lab4_BF/rc
+force clk 0
+force reset 1
+run 100
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+force clk 1
+run 100
+force clk 0
+run 100
+force reset 0
+force left 1
+force right 0
+run 100
+add wave -position end  sim:/lab4_BF/rc
+add wave -position end  sim:/lab4_BF/state
+restart -f -nolist -nowave
+restart -f
+add wave -position end  sim:/lab4_BF/clk
+add wave -position end  sim:/lab4_BF/reset
+add wave -position end  sim:/lab4_BF/left
+add wave -position end  sim:/lab4_BF/right
+add wave -position end  sim:/lab4_BF/la
+add wave -position end  sim:/lab4_BF/lb
+add wave -position end  sim:/lab4_BF/lc
+add wave -position end  sim:/lab4_BF/ra
+add wave -position end  sim:/lab4_BF/rb
+add wave -position end  sim:/lab4_BF/rc
+add wave -position end  sim:/lab4_BF/state
+# ** Note: (vish-4074) File C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/simulation/modelsim/vsim.wlf is still open, viewing file in live viewing mode.
+# 
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 22:05:38 on Oct 20,2016, Elapsed time: 0:15:44
+# Errors: 1, Warnings: 0
+# Loading project lab4_BF

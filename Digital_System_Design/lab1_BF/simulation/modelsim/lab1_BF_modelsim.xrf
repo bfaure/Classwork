@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/bfaure/Files/School/Simulations/lab1_BF/lab1_BF.bdf
+source_file = 1, C:/Users/bfaure/Files/School/Simulations/lab1_BF/db/lab1_BF.cbx.xml
+design_name = lab1_BF
+instance = comp, \S~output , S~output, lab1_BF, 1
+instance = comp, \Cout~output , Cout~output, lab1_BF, 1
+instance = comp, \B~input , B~input, lab1_BF, 1
+instance = comp, \A~input , A~input, lab1_BF, 1
+instance = comp, \Cin~input , Cin~input, lab1_BF, 1
+instance = comp, \inst1~0 , inst1~0, lab1_BF, 1
+instance = comp, \inst6~0 , inst6~0, lab1_BF, 1

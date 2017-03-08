@@ -1,0 +1,35 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/simulation/modelsim
+vlab4_BF
+DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+!s110 1477014580
+!i10b 1
+!s100 dBX3FAbY7:V`RJV8eMC_;0
+IHe^T:NfnSOA`>A^Xf[:d=3
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 lab4_BF_sv_unit
+S1
+R0
+w1477014297
+8C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv
+FC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv
+L0 6
+OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1477014580.000000
+!s107 C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF|C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/lab4_BF.sv|
+!i113 1
+o-sv -work work
+!s92 -sv -work work {+incdir+C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF}
+nlab4_@b@f

@@ -1,0 +1,32 @@
+
+// Brian Faure
+// testbench.sv
+
+module testbench();
+  
+  
+  //logic CLOCK_50;
+  //logic SW[0];
+  
+  logic CLOCK_50;
+  logic SW_0;
+  wire[6:0]	HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7;
+  
+  test lab6_BF(.*);
+  
+  function void print(string s);
+    begin
+      $display(s);
+    end
+  endfunction
+  
+  initial
+    begin
+      print("hello");
+      
+    end
+  
+  
+ 
+endmodule: testbench
+  

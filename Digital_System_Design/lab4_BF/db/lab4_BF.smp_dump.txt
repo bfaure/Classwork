@@ -1,0 +1,10 @@
+
+State Machine - |lab4_BF|state
+Name state.S2 state.S1 state.S5 state.S4 state.S0 state.S3 state.S6 
+state.S0 0 0 0 0 0 0 0 
+state.S4 0 0 0 1 1 0 0 
+state.S5 0 0 1 0 1 0 0 
+state.S6 0 0 0 0 1 0 1 
+state.S1 0 1 0 0 1 0 0 
+state.S2 1 0 0 0 1 0 0 
+state.S3 0 0 0 0 1 1 0 

@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab4_BF/simulation/modelsim
+valu
+Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z1 !s110 1477253971
+!i10b 1
+!s100 RVXVn:9FXQjg;lFOdDCK40
+IL`;EI>@l?eT]LfnRc>K[72
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 alu_sv_unit
+S1
+Z3 dC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF
+w1477183799
+8C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv
+FC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv
+L0 5
+Z4 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z5 !s108 1477253971.000000
+!s107 C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/alu.sv|
+!i113 1
+Z6 o-work work -sv
+vtestbench
+R0
+R1
+!i10b 1
+!s100 2JL1ZA_82Pi3>CYdF;coX2
+IPPG0_ZA6MaD@oFo<lgg632
+R2
+!s105 testbench_sv_unit
+S1
+R3
+w1477253945
+8C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv
+FC:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab5_BF/testbench.sv|
+!i113 1
+R6

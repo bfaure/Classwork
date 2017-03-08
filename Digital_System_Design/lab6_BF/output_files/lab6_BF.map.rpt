@@ -1,0 +1,392 @@
+Analysis & Synthesis report for lab6_BF
+Sun Nov 06 15:19:56 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 06 15:19:56 2016       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; lab6_BF                                     ;
+; Top-level Entity Name              ; lab6_BF                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 151                                         ;
+;     Total combinational functions  ; 151                                         ;
+;     Dedicated logic registers      ; 33                                          ;
+; Total registers                    ; 33                                          ;
+; Total pins                         ; 58                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; lab6_BF            ; lab6_BF            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; lab6_BF.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_divide.tdf                                      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/abs_divider.inc                                     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                 ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                                      ;         ;
+; db/lpm_divide_cqo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/lpm_divide_cqo.tdf  ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/abs_divider_4dg.tdf ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/alt_u_div_6af.tdf   ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/add_sub_7pc.tdf     ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/add_sub_8pc.tdf     ;         ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/lpm_abs_i0a.tdf     ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 151              ;
+;                                             ;                  ;
+; Total combinational functions               ; 151              ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 77               ;
+;     -- 3 input functions                    ; 40               ;
+;     -- <=2 input functions                  ; 34               ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 120              ;
+;     -- arithmetic mode                      ; 31               ;
+;                                             ;                  ;
+; Total registers                             ; 33               ;
+;     -- Dedicated logic registers            ; 33               ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 58               ;
+;                                             ;                  ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; current_state[3] ;
+; Maximum fan-out                             ; 32               ;
+; Total fan-out                               ; 674              ;
+; Average fan-out                             ; 2.25             ;
++---------------------------------------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |lab6_BF                   ; 151 (151)         ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |lab6_BF            ; lab6_BF     ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; user_pause[1..31]                      ; Stuck at GND due to stuck port data_in ;
+; should_rotate[1..31]                   ; Stuck at GND due to stuck port data_in ;
+; should_rotate[0]                       ; Lost fanout                            ;
+; current_clock_increment[0..31]         ; Lost fanout                            ;
+; Total Number of Removed Registers = 95 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                           ;
++------------------+---------------------------+----------------------------------------+
+; Register name    ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------+---------------------------+----------------------------------------+
+; should_rotate[1] ; Stuck at GND              ; should_rotate[0]                       ;
+;                  ; due to stuck port data_in ;                                        ;
++------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 33    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_cqo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 33                          ;
+;     plain             ; 33                          ;
+; cycloneiii_lcell_comb ; 156                         ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 125                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 77                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 7.10                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sun Nov 06 15:19:48 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6_BF -c lab6_BF
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/testbench.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file lab6_bf.sv
+    Info (12023): Found entity 1: lab6_BF File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 9
+Info (12127): Elaborating entity "lab6_BF" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(15): object "d_0" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 15
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(16): object "d_1" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 16
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(17): object "d_2" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 17
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(18): object "d_3" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 18
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(19): object "d_4" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 19
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(20): object "d_5" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 20
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(21): object "d_6" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 21
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(22): object "d_7" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 22
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(23): object "d_8" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 23
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(24): object "d_9" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 24
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(25): object "d_a" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 25
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(26): object "d_b" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 26
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(27): object "d_c" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 27
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(28): object "d_d" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 28
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(29): object "d_e" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 29
+Warning (10036): Verilog HDL or VHDL warning at lab6_BF.sv(30): object "d_f" assigned a value but never read File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 30
+Warning (10858): Verilog HDL warning at lab6_BF.sv(32): object aa used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 32
+Warning (10858): Verilog HDL warning at lab6_BF.sv(33): object bb used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 33
+Warning (10858): Verilog HDL warning at lab6_BF.sv(34): object cc used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 34
+Warning (10858): Verilog HDL warning at lab6_BF.sv(35): object dd used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 35
+Warning (10858): Verilog HDL warning at lab6_BF.sv(36): object ee used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 36
+Warning (10858): Verilog HDL warning at lab6_BF.sv(37): object ff used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 37
+Warning (10858): Verilog HDL warning at lab6_BF.sv(38): object gg used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 38
+Warning (10858): Verilog HDL warning at lab6_BF.sv(39): object hh used but never assigned File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 39
+Warning (10762): Verilog HDL Case Statement warning at lab6_BF.sv(98): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 98
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 55
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 55
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/lab6_BF.sv Line: 55
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cqo.tdf
+    Info (12023): Found entity 1: lpm_divide_cqo File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/lpm_divide_cqo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/abs_divider_4dg.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
+    Info (12023): Found entity 1: alt_u_div_6af File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/alt_u_div_6af.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/add_sub_8pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info (12023): Found entity 1: lpm_abs_i0a File: C:/Users/bfaure/Files/School/Fall 2016/Digital System Design/Simulations/lab6_BF/db/lpm_abs_i0a.tdf Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 240 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 182 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 878 megabytes
+    Info: Processing ended: Sun Nov 06 15:19:56 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
+
+

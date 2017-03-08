@@ -1,0 +1,23 @@
+|lab4_BF
+clk => state~1.DATAIN
+reset => Selector0.IN3
+reset => Selector0.IN4
+reset => Selector0.IN5
+reset => Selector0.IN6
+reset => state~3.DATAIN
+reset => always1.IN0
+reset => always1.IN0
+reset => nextstate.S5.DATAB
+reset => nextstate.S6.DATAB
+reset => nextstate.S2.DATAB
+reset => nextstate.S3.DATAB
+left => always1.IN1
+right => always1.IN1
+la << la.DB_MAX_OUTPUT_PORT_TYPE
+lb << lb.DB_MAX_OUTPUT_PORT_TYPE
+lc << lc.DB_MAX_OUTPUT_PORT_TYPE
+ra << ra.DB_MAX_OUTPUT_PORT_TYPE
+rb << rb.DB_MAX_OUTPUT_PORT_TYPE
+rc << rc.DB_MAX_OUTPUT_PORT_TYPE
+
+
